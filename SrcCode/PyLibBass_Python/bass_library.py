@@ -15,7 +15,7 @@ class BASS:
     def BASSFree(self):
         return ConnectBASS().BASS_Free()
     def BASSStop(self):
-        return ConnectBASS.BASS_Stop()
+        return ConnectBASS().BASS_Stop()
     def BASS_StreamCreateFile(self, mem : ctypes.c_int, filename : ctypes.c_char, offset : ctypes.c_int, length : ctypes.c_int, flags : ctypes.c_int) -> ctypes.c_ulong:
         ConnectBASS().BASS_StreamCreateFile.restype = ctypes.c_ulong
         ConnectBASS().BASS_StreamCreateFile.argtypes = [ctypes.c_int, ctypes.c_char, ctypes.c_int, ctypes.c_int, ctypes.c_int]
