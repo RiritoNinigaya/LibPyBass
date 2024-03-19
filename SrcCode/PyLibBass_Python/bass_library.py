@@ -13,8 +13,10 @@ class BASS:
         ConnectBASS().BASS_Init.argtypes = [ctypes.c_int, ctypes.c_int32, ctypes.c_int32, ctypes.c_int, ctypes.c_int]
         return ConnectBASS().BASS_Init(device, freq, flags, win, dsguid)
     def BASSFree(self):
+        ConnectBASS().BASS_Free.restype = ctypes.c_bool
         return ConnectBASS().BASS_Free()
     def BASSStop(self):
+        ConnectBASS().BASS_Stop.restype = ctypes.c_bool
         return ConnectBASS().BASS_Stop()
     def BASS_StreamCreateFile(self, mem : ctypes.c_int, filename : ctypes.c_char, offset : ctypes.c_int, length : ctypes.c_int, flags : ctypes.c_int) -> ctypes.c_ulong:
         ConnectBASS().BASS_StreamCreateFile.restype = ctypes.c_ulong
