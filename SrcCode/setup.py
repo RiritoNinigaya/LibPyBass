@@ -4,7 +4,7 @@ setup(
     name='PyLibBass',
     version='1.0',
     author_email='riritoninigaya@hotmail.com',
-    author='Ririto Ninigaya',
+    author='RiritoNinigaya',
     license='MIT License',
     url='https://github.com/RiritoNinigaya/LibPyBass',
     description='My First Library For BASS(WORKS ONLY X64!!!)',
