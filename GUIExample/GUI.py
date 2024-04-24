@@ -1,6 +1,6 @@
 import dearpygui.dearpygui as dpg
 import PyLibBass_Python.bass_library as bass_lib
-import PyLibBass_Python.CONSTANTS_BASS as xq
+import PyLibBass_Python.CONSTANTS_BASS as constant_bass
 from convert_str_to_bytes import Convert
 def SetMusicPlay(value_music : str):
     return dpg.get_value(value_music)
@@ -14,7 +14,7 @@ def StopMus():
 def Thread():
     GetBASS().BASS_INIT(device=int(-1), freq=48000, flags=0, win=0, dsguid=0)
     GetBASS().BASS_START()
-    handle_stream = GetBASS().BASS_StreamCreateFile(mem=0, filename=Convert(SetMusicPlay("GETVAL_MUSIC")), offset=0, length=0, flags=xq.BASS_SAMPLE_LOOP)
+    handle_stream = GetBASS().BASS_StreamCreateFile(mem=0, filename=Convert(SetMusicPlay("GETVAL_MUSIC")), offset=0, length=0, flags=constant_bass.BASS_SAMPLE_LOOP)
     GetBASS().BASS_ChannelPlay(handle=handle_stream, restart=False)
 def SetUI():
     dpg.create_context()
